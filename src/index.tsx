@@ -1,23 +1,21 @@
 /**
- * @class ExampleComponent
+ * @class ColorComponent
  */
 
 import * as React from 'react'
 
-import styles from './styles.css'
+export type Props = { text: string, color: string }
 
-export type Props = { text: string }
-
-export default class ExampleComponent extends React.Component<Props> {
+export default class ColorComponent extends React.Component<Props> {
   render() {
     const {
-      text
+      text, color
     } = this.props
 
     return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
+      <h1 style={{color}}>
+        ColorComponent: {text}
+      </h1>
     )
   }
 }
